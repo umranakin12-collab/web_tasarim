@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>Sizin Beğeneceğinizi Düşündüğüm İlan</title>
+    
+    <style>
+        /* Bu stil bloğu, sayfanın temiz görünmesini sağlar. 
+           Orijinal sitenin logolarını, menülerini veya reklamlarını yüklemez.
+        */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            background-color: #f0f2f5; /* Hafif gri arka plan */
+            color: #1c1e21;
+        }
+        .container {
+            max-width: 900px;
+            margin: 20px auto; /* Sayfayı ortala */
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            overflow: hidden; /* Köşeleri düzgün tutar */
+        }
+        
+        /* 1. İsteğiniz: Özel Başlık */
+        h1 {
+            font-size: 24px;
+            font-weight: 700;
+            padding: 20px 25px;
+            margin: 0;
+            background-color: #f9f9f9;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        /* 2. İsteğiniz: Yatay Kaydırılabilir Fotoğraf Galerisi */
+        .gallery-wrap {
+            padding: 20px 0 20px 25px;
+            background: #fafafa;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        .gallery {
+            display: flex;
+            overflow-x: auto; /* Yatay kaydırmayı etkinleştir */
+            scroll-snap-type: x mandatory; /* Kaydırmayı resimlere kilitler */
+            -webkit-overflow-scrolling: touch; /* Mobil için akıcı kaydırma */
+        }
+        .gallery a { /* Resim bağlantısı (büyütme için) */
+            flex: 0 0 auto; /* Resimlerin küçülmesini engeller */
+            margin-right: 12px;
+            scroll-snap-align: start;
+        }
+        .gallery img {
+            height: 150px; /* Sabit yükseklik */
+            width: auto;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .gallery a:last-child { margin-right: 25px; }
+        .gallery img:hover { opacity: 0.8; }
+
+        /* 2. İsteğiniz: Büyütülebilir Fotoğraf (Lightbox) Stili */
+        .lightbox {
+            display: none; /* Normalde gizli */
+            position: fixed;
+            z-index: 999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.85);
+            text-align: center;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 85%;
+            margin-top: 2.5%;
+            box-shadow: 0 0 25px rgba(0,0,0,0.5);
+        }
+        .lightbox:target {
+            display: block; /* URL #img1 gibi bir ID'ye geldiğinde göster */
+        }
+        .lightbox .close {
+            position: absolute;
+            top: 15px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            text-decoration: none;
+            font-family: Arial, sans-serif;
+        }
+        
+        /* 3. & 4. İsteğiniz: Bilgiler ve Açıklama Alanı */
+        .content {
+            padding: 25px;
+        }
+        .price {
+            font-size: 32px;
+            font-weight: 700;
+            color: #c00;
+            margin-bottom: 20px;
+        }
+        
+        /* İlan Bilgileri Listesi */
+        .details ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* İki sütunlu yapı */
+            gap: 12px 20px; /* Satır ve sütun boşlukları */
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+        .details li {
+            display: flex;
+            font-size: 15px;
+        }
+        .details strong {
+            flex-basis: 130px; /* Etiket genişliği */
+            font-weight: 600;
+            color: #555;
+        }
+        .details span {
+            color: #111;
+        }
+
+        /* Açıklama Alanı */
+        .description {
+            margin-top: 25px;
+            border-top: 1px solid #eee;
+            padding-top: 15px;
+        }
+        .description h2 {
+            font-size: 20px;
+            font-weight: 600;
+            margin-top: 0;
+            color: #333;
+        }
+        .description p {
+            line-height: 1.6;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lightbox" id="img1"><a href="#_" class="close">×</a><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/x5_1272750059upz.jpg"></div>
+    <div class="lightbox" id="img2"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_12727500598kh.jpg"></div>
+    <div class="lightbox" id="img3"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059en8.jpg"></div>
+    <div class="lightbox" id="img4"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059r37.jpg"></div>
+    <div class="lightbox" id="img5"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059ayk.jpg"></div>
+    <div class="lightbox" id="img6"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059sch.jpg"></div>
+    <div class="lightbox" id="img7"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059ztm.jpg"></div>
+    <div class="lightbox" id="img8"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059wac.jpg"></div>
+    <div class="lightbox" id="img9"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059cxz.jpg"></div>
+    <div class="lightbox" id="img10"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_12727500592ra.jpg"></div>
+    <div class="lightbox" id="img11"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059gi0.jpg"></div>
+    <div class="lightbox" id="img12"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059o57.jpg"></div>
+    <div class="lightbox" id="img13"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059b7t.jpg"></div>
+    <div class="lightbox" id="img14"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059n0n.jpg"></div>
+    <div class="lightbox" id="img15"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059y62.jpg"></div>
+    <div class="lightbox" id="img16"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059v9x.jpg"></div>
+    <div class="lightbox" id="img17"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_12727500598hj.jpg"></div>
+    <div class="lightbox" id="img18"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_127275005934k.jpg"></div>
+    <div class="lightbox" id="img19"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059pf5.jpg"></div>
+    <div class="lightbox" id="img20"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059ej5.jpg"></div>
+    <div class="container">
+        <h1>Sizin Beğeneceğinizi Düşündüğüm İlan</h1>
+
+        <div class="gallery-wrap">
+            <div class="gallery">
+                <a href="#img1"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059upz.jpg"></a>
+                <a href="#img2"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_12727500598kh.jpg"></a>
+                <a href="#img3"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059en8.jpg"></a>
+                <a href="#img4"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059r37.jpg"></a>
+                <a href="#img5"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059ayk.jpg"></a>
+                <a href="#img6"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059sch.jpg"></a>
+                <a href="#img7"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059ztm.jpg"></a>
+                <a href="#img8"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059wac.jpg"></a>
+                <a href="#img9"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059cxz.jpg"></a>
+                <a href="#img10"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_12727500592ra.jpg"></a>
+                <a href="#img11"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059gi0.jpg"></a>
+                <a href="#img12"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059o57.jpg"></a>
+                <a href="#img13"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059b7t.jpg"></a>
+                <a href="#img14"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059n0n.jpg"></a>
+                <a href="#img15"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059y62.jpg"></a>
+                <a href="#img16"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059v9x.jpg"></a>
+                <a href="#img17"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_12727500598hj.jpg"></a>
+                <a href="#img18"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_127275005934k.jpg"></a>
+                <a href="#img19"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059pf5.jpg"></a>
+                <a href="#img20"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059ej5.jpg"></a>
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="price">2.595.000 TL</div>
+            
+            <div class="details">
+                <ul>
+                    <li><strong>İlan Tarihi</strong><span>24 Ekim 2025</span></li>
+                    <li><strong>Emlak Türü</strong><span>Büro & Ofis</span></li>
+                    <li><strong>m²</strong><span>70</span></li>
+                    <li><strong>Oda Sayısı</strong><span>2+1</span></li>
+                    <li><strong>Bina Yaşı</strong><span>26-30 arası</span></li>
+                    <li><strong>Aidat (TL)</strong><span>2.000</span></li>
+                    <li><strong>Isıtma</strong><span>Merkezi</span></li>
+                    <li><strong>Bulunduğu Kat</strong><span>5</span></li>
+                    <li><strong>Kiracılı</strong><span>Evet</span></li>
+                    <li><strong>Krediye Uygunluk</strong><span>Evet</span></li>
+                    <li><strong>Tapu Durumu</strong><span>Kat Mülkiyetli</span></li>
+                    <li><strong>Takas</strong><span>Evet</span></li>
+                </ul>
+            </div>
+
+            <div class="description">
+                <h2>Açıklama</h2>
+                <p>Atatürk Bulvarı ve Sıhhiye’nin en merkezi noktalarından birinde yer alan Balıkçıoğlu İş Merkezi’nin 5. katında bulunan iş yerimi bir ev alma sürecim için satışa çıkardım. Prestijli iş merkezi yapısı, yeni ve sağlam altyapısı, ulaşım kolaylığı ve bilinirliliği ile dikkat çeken bu mülk, kullanım açısından ve geleceğinize yatırımlık değerli bir fırsat sunmaktadır. Değeri asla ölmeyecek kupon bir konumdadır.<br><br>
+                İş merkezinde yer alan bu ofis; danışmanlık, hukuk, sağlık, eğitim, finans, kurs, acente, avukatlık ve elektronik benzeri birçok sektör için uygun çalışma alanı sağlamaktadır. Toplu taşıma araçlarının dibinde metro çıkışında otobüs hatlarında değeri asla ölmeyecek bir yatırım. </p>
+                <p>Arkadaşlar takas seçeneğini açık bıraktım amacım bir ev niyetiyle bu seçeneği aktifleştirmekti. Araç, arsa vb seçenekleri değerlendirmiyorum. Ama üzerine para ekleyip bir ev almak. Sizden ricam bu tür teklifler sunmayın, cevap verme durumum olmayabilir. Ev takaslarında ise sadece belirli semtler geçerlidir. Üzerini anlaşmak şartı ile kavaklıdere esat semtine en fazla 1 kilometre mesafede takaslar olabilir.</p>
+                <p>Gayrimenkul, hem kurumsal firmalar hem de bireysel yatırımcılar için uzun vadeli ve güvenli bir yatırım alternatifi niteliğindedir.<br><br>
+                Detaylı bilgi ve yerinde inceleme için lütfen benimle iletişime geçiniz. <br><br>
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
