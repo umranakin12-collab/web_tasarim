@@ -7,25 +7,23 @@
     <title>Sizin Beğeneceğinizi Düşündüğüm İlan</title>
     
     <style>
-        /* Bu stil bloğu, sayfanın temiz görünmesini sağlar. 
-           Orijinal sitenin logolarını, menülerini veya reklamlarını yüklemez.
-        */
+        /* Sayfanın temiz görünmesini sağlayan stil bloğu */
         body {
             font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
             margin: 0;
-            background-color: #f0f2f5; /* Hafif gri arka plan */
+            background-color: #f0f2f5;
             color: #1c1e21;
         }
         .container {
             max-width: 900px;
-            margin: 20px auto; /* Sayfayı ortala */
+            margin: 20px auto;
             background-color: #ffffff;
             border-radius: 8px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-            overflow: hidden; /* Köşeleri düzgün tutar */
+            overflow: hidden;
         }
         
-        /* 1. İsteğiniz: Özel Başlık */
+        /* 1. Özel Başlık */
         h1 {
             font-size: 24px;
             font-weight: 700;
@@ -35,7 +33,7 @@
             border-bottom: 1px solid #e0e0e0;
         }
 
-        /* 2. İsteğiniz: Yatay Kaydırılabilir Fotoğraf Galerisi */
+        /* 2. Yatay Kaydırılabilir Fotoğraf Galerisi */
         .gallery-wrap {
             padding: 20px 0 20px 25px;
             background: #fafafa;
@@ -43,17 +41,17 @@
         }
         .gallery {
             display: flex;
-            overflow-x: auto; /* Yatay kaydırmayı etkinleştir */
-            scroll-snap-type: x mandatory; /* Kaydırmayı resimlere kilitler */
-            -webkit-overflow-scrolling: touch; /* Mobil için akıcı kaydırma */
+            overflow-x: auto;
+            scroll-snap-type: x mandatory;
+            -webkit-overflow-scrolling: touch;
         }
-        .gallery a { /* Resim bağlantısı (büyütme için) */
-            flex: 0 0 auto; /* Resimlerin küçülmesini engeller */
+        .gallery a {
+            flex: 0 0 auto;
             margin-right: 12px;
             scroll-snap-align: start;
         }
         .gallery img {
-            height: 150px; /* Sabit yükseklik */
+            height: 150px;
             width: auto;
             border-radius: 8px;
             cursor: pointer;
@@ -62,9 +60,9 @@
         .gallery a:last-child { margin-right: 25px; }
         .gallery img:hover { opacity: 0.8; }
 
-        /* 2. İsteğiniz: Büyütülebilir Fotoğraf (Lightbox) Stili */
+        /* 2. Büyütülebilir Fotoğraf (Lightbox) Stili */
         .lightbox {
-            display: none; /* Normalde gizli */
+            display: none;
             position: fixed;
             z-index: 999;
             top: 0;
@@ -81,7 +79,7 @@
             box-shadow: 0 0 25px rgba(0,0,0,0.5);
         }
         .lightbox:target {
-            display: block; /* URL #img1 gibi bir ID'ye geldiğinde göster */
+            display: block;
         }
         .lightbox .close {
             position: absolute;
@@ -94,7 +92,7 @@
             font-family: Arial, sans-serif;
         }
         
-        /* 3. & 4. İsteğiniz: Bilgiler ve Açıklama Alanı */
+        /* 3. & 4. Bilgiler ve Açıklama Alanı */
         .content {
             padding: 25px;
         }
@@ -111,8 +109,8 @@
             padding: 0;
             margin: 0;
             display: grid;
-            grid-template-columns: 1fr 1fr; /* İki sütunlu yapı */
-            gap: 12px 20px; /* Satır ve sütun boşlukları */
+            grid-template-columns: 1fr 1fr;
+            gap: 12px 20px;
             border-top: 1px solid #eee;
             padding-top: 20px;
         }
@@ -121,7 +119,7 @@
             font-size: 15px;
         }
         .details strong {
-            flex-basis: 130px; /* Etiket genişliği */
+            flex-basis: 130px;
             font-weight: 600;
             color: #555;
         }
@@ -149,7 +147,7 @@
 </head>
 <body>
 
-    <div class="lightbox" id="img1"><a href="#_" class="close">×</a><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/x5_1272750059upz.jpg"></div>
+    <div class="lightbox" id="img1"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059upz.jpg"></div>
     <div class="lightbox" id="img2"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_12727500598kh.jpg"></div>
     <div class="lightbox" id="img3"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059en8.jpg"></div>
     <div class="lightbox" id="img4"><a href="#_" class="close">×</a><img src="https://i0.shbdn.com/photos/75/00/59/x5_1272750059r37.jpg"></div>
@@ -174,26 +172,26 @@
 
         <div class="gallery-wrap">
             <div class="gallery">
-                <a href="#img1"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059upz.jpg"></a>
-                <a href="#img2"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_12727500598kh.jpg"></a>
-                <a href="#img3"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059en8.jpg"></a>
-                <a href="#img4"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059r37.jpg"></a>
-                <a href="#img5"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059ayk.jpg"></a>
-                <a href="#img6"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059sch.jpg"></a>
-                <a href="#img7"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059ztm.jpg"></a>
-                <a href="#img8"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059wac.jpg"></a>
-                <a href="#img9"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059cxz.jpg"></a>
-                <a href="#img10"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_12727500592ra.jpg"></a>
-                <a href="#img11"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059gi0.jpg"></a>
-                <a href="#img12"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059o57.jpg"></a>
-                <a href="#img13"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059b7t.jpg"></a>
-                <a href="#img14"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059n0n.jpg"></a>
-                <a href="#img15"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059y62.jpg"></a>
-                <a href="#img16"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059v9x.jpg"></a>
-                <a href="#img17"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_12727500598hj.jpg"></a>
-                <a href="#img18"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_127275005934k.jpg"></a>
-                <a href="#img19"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059pf5.jpg"></a>
-                <a href="#img20"><img src="./Sahibinden Fırsat Kupon Necatibey Cd. En Değerli Yeri Büro_Ofis sahibinden.comda - 1272750059_files/thmb_1272750059ej5.jpg"></a>
+                <a href="#img1"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059upz.jpg"></a>
+                <a href="#img2"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_12727500598kh.jpg"></a>
+                <a href="#img3"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059en8.jpg"></a>
+                <a href="#img4"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059r37.jpg"></a>
+                <a href="#img5"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059ayk.jpg"></a>
+                <a href="#img6"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059sch.jpg"></a>
+                <a href="#img7"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059ztm.jpg"></a>
+                <a href="#img8"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059wac.jpg"></a>
+                <a href="#img9"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059cxz.jpg"></a>
+                <a href="#img10"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_12727500592ra.jpg"></a>
+                <a href="#img11"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059gi0.jpg"></a>
+                <a href="#img12"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059o57.jpg"></a>
+                <a href="#img13"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059b7t.jpg"></a>
+                <a href="#img14"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059n0n.jpg"></a>
+                <a href="#img15"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059y62.jpg"></a>
+                <a href="#img16"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059v9x.jpg"></a>
+                <a href="#img17"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_12727500598hj.jpg"></a>
+                <a href="#img18"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_127275005934k.jpg"></a>
+                <a href="#img19"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059pf5.jpg"></a>
+                <a href="#img20"><img src="https://i0.shbdn.com/photos/75/00/59/thmb_1272750059ej5.jpg"></a>
             </div>
         </div>
 
